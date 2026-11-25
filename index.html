@@ -1076,6 +1076,77 @@ svg { display: block; }
 .health-empty { padding: 18px; color: var(--muted); background: #f8f1e6; border-radius: 12px; font-size: 10.5px; line-height: 1.8; }
 .health-disclaimer { margin: 22px 0 0; padding: 12px 14px; color: #9b8875; background: rgba(255, 250, 242, 0.5); border: 1px dashed var(--line); border-radius: 12px; font-size: 9px; line-height: 1.8; }
 
+/* ---------------------------------- pair whispers */
+.whisper-section { margin: 18px 0 4px; }
+.whisper-card {
+  position: relative;
+  overflow: hidden;
+  padding: 18px 20px;
+  background:
+    radial-gradient(circle at 94% 0%, rgba(255, 255, 255, .8), transparent 34%),
+    linear-gradient(145deg, #fff3f8, #ffe4ef);
+  border: 2px solid #ffd0df;
+  border-radius: 24px 24px 24px 9px;
+  box-shadow: 0 6px 0 #ffe0ea, 0 20px 36px -30px rgba(190, 100, 130, .45);
+}
+.whisper-card::after {
+  content: "♡";
+  position: absolute;
+  top: 14px;
+  right: 22px;
+  color: rgba(232, 86, 130, .16);
+  font-size: 52px;
+  transform: rotate(12deg);
+  pointer-events: none;
+}
+.whisper-head { position: relative; z-index: 1; display: flex; align-items: flex-start; justify-content: space-between; gap: 14px; }
+.whisper-kicker { margin: 0 0 3px; color: #c36887; font-size: 8px; font-weight: 700; letter-spacing: .12em; }
+.whisper-head h2 { margin: 0; color: #e85682; font-family: var(--font-serif); font-size: 24px; font-weight: 900; letter-spacing: .04em; }
+.whisper-status { display: inline-flex; align-items: center; gap: 5px; padding: 5px 8px; color: #b58b99; background: rgba(255,255,255,.7); border: 1px solid #ffd7e2; border-radius: 999px; font-size: 8px; white-space: nowrap; }
+.whisper-status i { width: 5px; height: 5px; background: #c7a4af; border-radius: 50%; }
+.whisper-status.is-online { color: #5b8673; }
+.whisper-status.is-online i { background: #6f9f8a; box-shadow: 0 0 0 3px rgba(111,159,138,.12); }
+.whisper-intro { position: relative; z-index: 1; max-width: 640px; margin: 10px 0 13px; color: #8d6b77; font-size: 10.5px; line-height: 1.85; }
+.whisper-setup { position: relative; z-index: 1; display: flex; flex-wrap: wrap; gap: 9px; align-items: center; }
+.whisper-create { height: 38px; padding: 0 14px; color: #fff; background: #ff85aa; border: 2px solid #fff; border-radius: 12px; box-shadow: 0 4px 0 #ffc4d5; font-size: 10px; font-weight: 700; }
+.whisper-create:hover { background: #ea6c96; }
+.whisper-join { display: flex; flex: 1 1 250px; gap: 6px; min-width: 0; }
+.whisper-join input { min-width: 0; flex: 1; height: 38px; padding: 0 11px; color: var(--ink); background: #fff; border: 1.5px solid #ffd7e2; border-radius: 10px; font-size: 10px; outline: none; }
+.whisper-join input:focus { border-color: #ff9ab8; }
+.whisper-join button { height: 38px; padding: 0 12px; color: #d06085; background: #fff; border: 1.5px solid #ffc4d5; border-radius: 10px; font-size: 10px; font-weight: 600; }
+.whisper-footnote { position: relative; z-index: 1; margin: 9px 0 0; color: #b58b99; font-size: 8px; line-height: 1.6; }
+.whisper-pairbar { position: relative; z-index: 1; display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 9px; padding: 7px 10px; color: #a17985; background: rgba(255,255,255,.58); border: 1px dashed #ffc4d5; border-radius: 9px; font-size: 8.5px; }
+.whisper-pairbar b { color: #e85682; letter-spacing: .12em; font-size: 10px; }
+.whisper-pair-actions { display: flex; gap: 8px; }
+.whisper-pair-actions button { padding: 0; color: #d06085; background: transparent; border: 0; font-size: 8.5px; text-decoration: underline; text-underline-offset: 2px; }
+.whisper-pair-actions button.muted { color: #b58b99; }
+.whisper-list { position: relative; z-index: 1; display: flex; flex-direction: column; gap: 7px; margin-top: 11px; }
+.whisper-item { position: relative; max-width: 86%; padding: 9px 11px; background: #fff; border: 1px solid #ffd7e2; border-radius: 14px 14px 14px 4px; box-shadow: 0 2px 0 rgba(255,215,226,.55); }
+.whisper-item.is-mine { align-self: flex-end; background: #fff0f6; border-color: #ffc4d5; border-radius: 14px 14px 4px 14px; }
+.whisper-meta { display: flex; align-items: baseline; gap: 8px; color: #b58b99; font-size: 8px; }
+.whisper-meta b { color: #e85682; font-size: 9px; }
+.whisper-item p { margin: 3px 0 0; color: #6b4d57; font-size: 11px; line-height: 1.75; word-break: break-word; white-space: pre-wrap; }
+.whisper-ack { margin-top: 7px; padding: 4px 8px; color: #5b8673; background: #e0f3ea; border: 0; border-radius: 7px; font-size: 8.5px; font-weight: 600; }
+.whisper-wait { display: inline-block; margin-top: 5px; color: #c58ba0; font-size: 8px; }
+.whisper-empty { padding: 14px 10px; color: #a17985; background: rgba(255,255,255,.52); border: 1px dashed #ffd0df; border-radius: 12px; font-size: 9.5px; line-height: 1.9; text-align: center; }
+.whisper-compose { position: relative; z-index: 1; display: flex; align-items: flex-end; gap: 7px; margin-top: 10px; }
+.whisper-compose textarea { flex: 1; min-width: 0; min-height: 40px; max-height: 100px; padding: 9px 10px; color: var(--ink); background: #fff; border: 1.5px solid #ffd7e2; border-radius: 10px; resize: vertical; font: inherit; font-size: 10px; line-height: 1.6; outline: none; }
+.whisper-compose textarea:focus { border-color: #ff9ab8; }
+.whisper-compose button { flex: none; height: 40px; padding: 0 13px; color: #fff; background: #ff85aa; border: 2px solid #fff; border-radius: 10px; box-shadow: 0 3px 0 #ffc4d5; font-size: 9px; font-weight: 700; white-space: nowrap; }
+.whisper-compose button:disabled { opacity: .5; box-shadow: none; cursor: not-allowed; }
+@media (max-width: 680px) {
+  .whisper-section { margin: 14px 0 2px; }
+  .whisper-card { padding: 15px; border-radius: 21px 21px 21px 8px; }
+  .whisper-head { align-items: flex-start; }
+  .whisper-head h2 { font-size: 22px; }
+  .whisper-status { max-width: 120px; font-size: 7.5px; white-space: normal; text-align: right; }
+  .whisper-setup { align-items: stretch; flex-direction: column; }
+  .whisper-create { width: 100%; }
+  .whisper-pairbar { align-items: flex-start; flex-direction: column; gap: 6px; }
+  .whisper-pair-actions { align-self: flex-end; }
+  .whisper-item { max-width: 92%; }
+}
+
 /* ---------------------------------- cooking history */
 .history-view { min-height: 76vh; padding: 34px 0 50px; }
 .history-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; padding-bottom: 20px; border-bottom: 1px solid var(--line); }
@@ -3224,6 +3295,8 @@ body::after {
         </aside>
       </section>
 
+      <section class="whisper-section" id="whisperSection" aria-labelledby="whisperTitle"></section>
+
       <section class="menu-section" id="menuSection" aria-labelledby="menuTitle">
         <div class="section-heading">
           <div>
@@ -3918,11 +3991,34 @@ body::after {
   const ONLINE_REPO = 'https://github.com/Anduin2017/HowToCook';
   const MQTT_BROKER = 'wss://broker.emqx.io:8084/mqtt';
   const CART_CLIENT_ID = `jiawei-${Math.random().toString(16).slice(2, 10)}`;
-  const urlRoom = new URLSearchParams(window.location.search).get('room');
+  const PAIR_KEY = 'jiawei.pair.v1';
+  const PEER_KEY = 'jiawei.peer.v1';
+  const params = new URLSearchParams(window.location.search);
+  const urlRoom = params.get('room');
+  const urlPair = params.get('pair');
+  const validPairCode = (value) => /^[a-z0-9]{6,20}$/i.test(value || '');
+  let storedPair = '';
+  let storedPeer = '';
+  try {
+    storedPair = localStorage.getItem(PAIR_KEY) || '';
+    storedPeer = localStorage.getItem(PEER_KEY) || '';
+  } catch (error) { /* Local storage may be unavailable. */ }
+  const pairCode = validPairCode(urlPair) ? urlPair.toLowerCase() : (validPairCode(storedPair) ? storedPair.toLowerCase() : '');
+  if (validPairCode(urlPair) && pairCode) {
+    try { localStorage.setItem(PAIR_KEY, pairCode); } catch (error) { /* Ignore. */ }
+  }
+  const peerId = storedPeer || `peer-${Math.random().toString(16).slice(2, 10)}`;
+  if (!storedPeer) {
+    try { localStorage.setItem(PEER_KEY, peerId); } catch (error) { /* Ignore. */ }
+  }
   const sharedRoom = /^[a-z0-9-]{4,40}$/i.test(urlRoom || '')
     ? urlRoom.toLowerCase()
     : `home-${hashString(`${window.location.hostname}${window.location.pathname}`).slice(0, 10)}`;
-  const CART_TOPIC = `jiawei/family/${sharedRoom}/cart/v1`;
+  const CART_TOPIC = pairCode ? `jiawei/pair/${pairCode}/cart/v1` : `jiawei/family/${sharedRoom}/cart/v1`;
+  const WHISPER_TOPIC = pairCode ? `jiawei/pair/${pairCode}/whisper/v1` : null;
+  const CART_KEYS = pairCode
+    ? { cart: `jiawei.cart.pair.${pairCode}.v1`, cartDate: `jiawei.cartDate.pair.${pairCode}.v1`, orderNote: `jiawei.orderNote.pair.${pairCode}.v1` }
+    : STORE_KEYS;
   const ONLINE_ITEMS = (Array.isArray(ONLINE_LIBRARY.items) ? ONLINE_LIBRARY.items : [])
     .filter((item) => item && typeof item.path === 'string' && typeof item.name === 'string')
     .map((item) => ({
@@ -4182,8 +4278,8 @@ body::after {
   customDishes = loadCustomDishes();
 
   const bootDay = todayISO();
-  const savedCartDay = String(safeRead(STORE_KEYS.cartDate, bootDay));
-  const bootCart = savedCartDay === bootDay ? normalizeCart(safeRead(STORE_KEYS.cart, [])) : [];
+  const savedCartDay = String(safeRead(CART_KEYS.cartDate, bootDay));
+  const bootCart = savedCartDay === bootDay ? normalizeCart(safeRead(CART_KEYS.cart, [])) : [];
 
   const state = {
     mode: 'local',
@@ -4197,9 +4293,12 @@ body::after {
     mqttConnected: false,
     mqttStatus: 'idle',
     sharedReady: false,
+    whispers: [],
+    whisperLoaded: false,
+    whisperDraft: '',
     sharedIgnore: false,
     sharedPublishTimer: null,
-    orderNote: savedCartDay === bootDay ? String(safeRead(STORE_KEYS.orderNote, '')).slice(0, 180) : '',
+    orderNote: savedCartDay === bootDay ? String(safeRead(CART_KEYS.orderNote, '')).slice(0, 180) : '',
     currentDish: null,
     openVideoOnDetail: null,
     picks: [],
@@ -4521,6 +4620,7 @@ body::after {
   const searchView = $('#searchView');
   const healthView = $('#healthView');
   const historyView = $('#historyView');
+  const whisperSection = $('#whisperSection');
   const dishGrid = $('#dishGrid');
   const emptyState = $('#emptyState');
   const emptyTitle = $('#emptyTitle');
@@ -5535,12 +5635,233 @@ body::after {
 
   function saveCart() {
     state.cartDate = todayISO();
-    safeWrite(STORE_KEYS.cart, state.cart);
-    safeWrite(STORE_KEYS.cartDate, state.cartDate);
+    safeWrite(CART_KEYS.cart, state.cart);
+    safeWrite(CART_KEYS.cartDate, state.cartDate);
     queueSharedPublish();
   }
 
   /* ------------------------------------------------------- shared family cart */
+  /* ------------------------------------------------------- pair whispers */
+  function pairInviteUrl(code = pairCode) {
+    const url = new URL(window.location.href);
+    url.searchParams.set('pair', code);
+    url.searchParams.delete('room');
+    url.hash = '';
+    return url.toString();
+  }
+
+  function whisperClock(value) {
+    const date = new Date(value);
+    if (Number.isNaN(date.getTime())) return '';
+    return date.toLocaleTimeString('zh-CN', { hour: '2-digit', minute: '2-digit' });
+  }
+
+  function activeWhispers() {
+    return state.whispers.filter((message) => !message.ack).sort((a, b) => a.at - b.at);
+  }
+
+  function whisperPayload() {
+    return {
+      v: 1,
+      updatedAt: Date.now(),
+      messages: state.whispers.slice(-40)
+    };
+  }
+
+  function renderWhisperPanel() {
+    if (!whisperSection) return;
+    const connected = state.mqttConnected;
+    const statusText = connected ? '已连接 · 只有你们两个人' : (pairCode ? '正在连接悄悄话…' : '未连接');
+    if (!pairCode) {
+      whisperSection.innerHTML = `
+        <div class="whisper-card">
+          <div class="whisper-head">
+            <div>
+              <p class="whisper-kicker">💌 Secret · 只属于你们俩</p>
+              <h2 id="whisperTitle">悄悄话</h2>
+            </div>
+            <span class="whisper-status"><i></i>${statusText}</span>
+          </div>
+          <p class="whisper-intro">创建一个只有你们两个人的空间：对方打开邀请链接后，悄悄话和点菜单都只在这两个人之间同步，其他人不会看到。</p>
+          <div class="whisper-setup">
+            <button class="whisper-create" type="button" data-pair-create>＋ 创建悄悄话房间</button>
+            <div class="whisper-join">
+              <input id="pairJoinCode" type="text" maxlength="20" autocomplete="off" placeholder="或输入对方口令" aria-label="输入悄悄话口令">
+              <button type="button" data-pair-join>加入</button>
+            </div>
+          </div>
+          <p class="whisper-footnote">口令只发给对方；公共中继不存放历史聊天记录。</p>
+        </div>
+      `;
+      return;
+    }
+
+    const pending = activeWhispers();
+    const hasIncoming = pending.some((message) => message.from !== peerId);
+    const messageHtml = pending.length
+      ? pending.map((message) => {
+        const mine = message.from === peerId;
+        return `
+          <article class="whisper-item ${mine ? 'is-mine' : 'is-theirs'}">
+            <div class="whisper-meta"><b>${mine ? '我' : '对方'}</b><span>${esc(whisperClock(message.at))}</span></div>
+            <p>${esc(message.text)}</p>
+            ${mine
+              ? '<span class="whisper-wait">等待对方确认收到…</span>'
+              : `<button class="whisper-ack" type="button" data-whisper-ack="${esc(message.id)}">✓ 确认收到</button>`}
+          </article>
+        `;
+      }).join('')
+      : '<div class="whisper-empty">现在没有待接收的悄悄话。<br>写一句只给对方看的话吧。</div>';
+
+    whisperSection.innerHTML = `
+      <div class="whisper-card is-paired">
+        <div class="whisper-head">
+          <div>
+            <p class="whisper-kicker">💌 Secret · 只属于你们俩</p>
+            <h2 id="whisperTitle">悄悄话</h2>
+          </div>
+          <span class="whisper-status ${connected ? 'is-online' : ''}"><i></i>${statusText}</span>
+        </div>
+        <div class="whisper-pairbar">
+          <span>配对码 <b>${esc(pairCode.toUpperCase())}</b></span>
+          <div class="whisper-pair-actions">
+            <button type="button" data-pair-copy>复制邀请链接</button>
+            <button type="button" class="muted" data-pair-exit>退出</button>
+          </div>
+        </div>
+        <div class="whisper-list">${messageHtml}</div>
+        <div class="whisper-compose">
+          <textarea id="whisperInput" maxlength="240" rows="2" placeholder="${hasIncoming ? '回复对方，同时会确认收到…' : '写一句只给对方看的话…'}" aria-label="悄悄话内容">${esc(state.whisperDraft)}</textarea>
+          <button type="button" data-whisper-send ${connected ? '' : 'disabled'}>${hasIncoming ? '回复并确认' : '发出去'}</button>
+        </div>
+        <p class="whisper-footnote">${connected ? '消息会保留到对方点「确认收到」为止。' : '悄悄话需要联网；当前消息还没有发出去。'}</p>
+      </div>
+    `;
+  }
+
+  function publishWhispers() {
+    if (!pairCode || !WHISPER_TOPIC || !state.mqttClient || !state.mqttConnected) return;
+    state.mqttClient.publish(WHISPER_TOPIC, JSON.stringify(whisperPayload()), { qos: 1, retain: true });
+  }
+
+  function applyWhisperPayload(payload) {
+    if (!pairCode || !payload || payload.v !== 1 || !Array.isArray(payload.messages)) return;
+    const byId = new Map(state.whispers.map((message) => [message.id, message]));
+    let newIncoming = false;
+    for (const message of payload.messages) {
+      if (!message || typeof message.id !== 'string' || typeof message.text !== 'string') continue;
+      const clean = {
+        id: message.id,
+        from: String(message.from || ''),
+        text: String(message.text).slice(0, 240),
+        at: Number(message.at) || Date.now(),
+        ack: Boolean(message.ack)
+      };
+      const existing = byId.get(clean.id);
+      if (existing) {
+        existing.ack = existing.ack || clean.ack;
+      } else {
+        byId.set(clean.id, clean);
+        if (clean.from !== peerId && !clean.ack) newIncoming = true;
+      }
+    }
+    state.whispers = Array.from(byId.values()).sort((a, b) => a.at - b.at).slice(-40);
+    state.whisperLoaded = true;
+    renderWhisperPanel();
+    if (newIncoming) showToast('收到一条悄悄话');
+  }
+
+  function sendWhisper() {
+    if (!pairCode) {
+      showToast('先创建或加入一个悄悄话房间');
+      return;
+    }
+    if (!state.mqttConnected) {
+      showToast('悄悄话需要联网，当前还没有连接');
+      return;
+    }
+    const input = $('#whisperInput');
+    const text = (input?.value || state.whisperDraft || '').trim();
+    if (!text) {
+      showToast('先写一句想说的话');
+      return;
+    }
+    const incoming = state.whispers.filter((message) => message.from !== peerId && !message.ack);
+    incoming.forEach((message) => { message.ack = true; });
+    state.whispers.push({
+      id: `w-${Date.now()}-${Math.random().toString(36).slice(2, 6)}`,
+      from: peerId,
+      text: text.slice(0, 240),
+      at: Date.now(),
+      ack: false
+    });
+    state.whispers = state.whispers.slice(-40);
+    state.whisperDraft = '';
+    publishWhispers();
+    renderWhisperPanel();
+    showToast(incoming.length ? '已回复，并确认收到对方的消息' : '悄悄话已发出，等对方确认');
+  }
+
+  function acknowledgeWhisper(id) {
+    if (!state.mqttConnected) {
+      showToast('确认收到需要联网');
+      return;
+    }
+    const message = state.whispers.find((item) => item.id === id);
+    if (!message || message.from === peerId) return;
+    message.ack = true;
+    publishWhispers();
+    renderWhisperPanel();
+    showToast('已确认收到');
+  }
+
+  function createPairRoom() {
+    const alphabet = 'abcdefghjkmnpqrstuvwxyz23456789';
+    const bytes = new Uint8Array(10);
+    if (window.crypto?.getRandomValues) window.crypto.getRandomValues(bytes);
+    else for (let index = 0; index < bytes.length; index += 1) bytes[index] = Math.floor(Math.random() * 256);
+    const code = Array.from(bytes, (byte) => alphabet[byte % alphabet.length]).join('');
+    try { localStorage.setItem(PAIR_KEY, code); } catch (error) { /* Ignore. */ }
+    const url = new URL(window.location.href);
+    url.searchParams.set('pair', code);
+    url.searchParams.delete('room');
+    url.hash = '';
+    window.location.href = url.toString();
+  }
+
+  function joinPairRoom() {
+    const input = $('#pairJoinCode');
+    const code = (input?.value || '').trim().toLowerCase();
+    if (!validPairCode(code)) {
+      showToast('口令是 6–20 位字母或数字');
+      return;
+    }
+    try { localStorage.setItem(PAIR_KEY, code); } catch (error) { /* Ignore. */ }
+    const url = new URL(window.location.href);
+    url.searchParams.set('pair', code);
+    url.searchParams.delete('room');
+    url.hash = '';
+    window.location.href = url.toString();
+  }
+
+  function exitPairRoom() {
+    if (!window.confirm('退出后，你会回到普通家庭点菜单。确定退出这个悄悄话房间？')) return;
+    try { localStorage.removeItem(PAIR_KEY); } catch (error) { /* Ignore. */ }
+    const url = new URL(window.location.href);
+    url.searchParams.delete('pair');
+    url.hash = '';
+    window.location.href = url.toString();
+  }
+
+  async function copyPairInvite() {
+    const link = pairInviteUrl();
+    if (await writeClipboard(link)) {
+      showToast('邀请链接已复制，发给对方就好');
+    } else {
+      openCopyDialog(link);
+    }
+  }
+
   function sharedPayload() {
     return {
       v: 1,
@@ -5555,6 +5876,7 @@ body::after {
         };
       }),
       orderNote: state.orderNote,
+      pairing: pairCode ? state.pairing : undefined,
       updatedAt: Date.now(),
       clientId: state.clientId
     };
@@ -5564,15 +5886,18 @@ body::after {
     const element = $('#sharedStatus');
     if (!element) return;
     if (state.mqttConnected) {
-      element.textContent = '家庭共享已连接 · 家人打开同一网址就能一起点';
+      element.textContent = pairCode
+        ? '悄悄话空间已连接 · 点菜单、搭配和悄悄话只在这两个人之间同步'
+        : '家庭共享已连接 · 家人打开同一网址就能一起点';
       element.className = 'shared-status is-online';
     } else if (state.mqttStatus === 'connecting') {
-      element.textContent = '正在连接家庭共享…';
+      element.textContent = pairCode ? '正在连接悄悄话空间…' : '正在连接家庭共享…';
       element.className = 'shared-status is-connecting';
     } else {
       element.textContent = '本机模式 · 共享暂未连接，点菜单仍会保存在本机';
       element.className = 'shared-status';
     }
+    if (pairCode) renderWhisperPanel();
   }
 
   function queueSharedPublish() {
@@ -5632,12 +5957,23 @@ body::after {
     state.cart = incoming;
     state.sharedDirty = false;
     state.orderNote = typeof payload.orderNote === 'string' ? payload.orderNote.slice(0, 180) : '';
+    if (pairCode && Array.isArray(payload.pairing)) {
+      const nextPairing = payload.pairing
+        .filter((id) => typeof id === 'string' && getDish(id))
+        .filter((id, index, list) => list.indexOf(id) === index)
+        .slice(0, 4);
+      if (nextPairing.join('|') !== state.pairing.join('|')) {
+        state.pairing = nextPairing;
+        safeWrite(STORE_KEYS.pairing, state.pairing);
+        renderNight();
+      }
+    }
     state.cartDate = payload.date;
     state.lastSharedUpdated = payload.updatedAt || Date.now();
     state.sharedIgnore = true;
-    safeWrite(STORE_KEYS.cart, state.cart);
-    safeWrite(STORE_KEYS.cartDate, state.cartDate);
-    safeWrite(STORE_KEYS.orderNote, state.orderNote);
+    safeWrite(CART_KEYS.cart, state.cart);
+    safeWrite(CART_KEYS.cartDate, state.cartDate);
+    safeWrite(CART_KEYS.orderNote, state.orderNote);
     state.sharedIgnore = false;
     syncCartUI();
     const active = document.activeElement;
@@ -5654,9 +5990,9 @@ body::after {
     state.orderNote = '';
     state.cartDate = todayISO();
     state.sharedIgnore = true;
-    safeWrite(STORE_KEYS.cart, []);
-    safeWrite(STORE_KEYS.cartDate, state.cartDate);
-    safeWrite(STORE_KEYS.orderNote, '');
+    safeWrite(CART_KEYS.cart, []);
+    safeWrite(CART_KEYS.cartDate, state.cartDate);
+    safeWrite(CART_KEYS.orderNote, '');
     state.sharedIgnore = false;
     syncCartUI();
     if (cartDialog.open) renderCart();
@@ -5677,6 +6013,7 @@ body::after {
 
   function connectSharedCart() {
     if (typeof mqtt === 'undefined') {
+      state.mqttStatus = 'offline';
       updateSharedStatus();
       return;
     }
@@ -5706,16 +6043,20 @@ body::after {
             }
           }, 1500);
         });
+        if (WHISPER_TOPIC) client.subscribe(WHISPER_TOPIC, { qos: 1 });
       });
 
       client.on('message', (topic, message) => {
-        if (topic !== CART_TOPIC) return;
-        receivedMessage = true;
         try {
-          const payload = JSON.parse(message.toString());
-          applySharedPayload(payload);
+          if (WHISPER_TOPIC && topic === WHISPER_TOPIC) {
+            applyWhisperPayload(JSON.parse(message.toString()));
+            return;
+          }
+          if (topic !== CART_TOPIC) return;
+          receivedMessage = true;
+          applySharedPayload(JSON.parse(message.toString()));
         } catch (error) {
-          /* Ignore malformed family cart messages. */
+          /* Ignore malformed family cart or whisper messages. */
         }
       });
 
@@ -6197,6 +6538,7 @@ body::after {
     safeWrite(STORE_KEYS.pairing, state.pairing);
     closePairingDialog();
     renderNight();
+    if (pairCode) queueSharedPublish();
     showToast(state.pairing.length ? '今晚的搭配保存好了' : '已恢复自动搭配');
   }
 
@@ -6945,7 +7287,7 @@ body::after {
     }
     if (event.target.id === 'orderNote') {
       state.orderNote = event.target.value.slice(0, 180);
-      safeWrite(STORE_KEYS.orderNote, state.orderNote);
+      safeWrite(CART_KEYS.orderNote, state.orderNote);
       queueSharedPublish();
     }
   });
@@ -6957,7 +7299,7 @@ body::after {
     state.cart = [];
     state.orderNote = '';
     saveCart();
-    safeWrite(STORE_KEYS.orderNote, '');
+    safeWrite(CART_KEYS.orderNote, '');
     renderCart();
     syncCartUI();
     cartScroll.scrollTop = 0;
@@ -7075,6 +7417,7 @@ body::after {
     safeWrite(STORE_KEYS.pairing, []);
     closePairingDialog();
     renderNight();
+    if (pairCode) queueSharedPublish();
     showToast('已恢复每日自动搭配');
   });
   pairingSave.addEventListener('click', savePairing);
@@ -7142,6 +7485,42 @@ body::after {
       if (weight) weight.value = log ? log.weight : '';
       if (waist) waist.value = log && log.waist ? log.waist : '';
       if (note) note.value = log ? log.note : '';
+    }
+  });
+
+  whisperSection.addEventListener('click', (event) => {
+    if (event.target.closest('[data-pair-create]')) {
+      createPairRoom();
+      return;
+    }
+    if (event.target.closest('[data-pair-join]')) {
+      joinPairRoom();
+      return;
+    }
+    if (event.target.closest('[data-pair-copy]')) {
+      copyPairInvite();
+      return;
+    }
+    if (event.target.closest('[data-pair-exit]')) {
+      exitPairRoom();
+      return;
+    }
+    const ack = event.target.closest('[data-whisper-ack]');
+    if (ack) {
+      acknowledgeWhisper(ack.dataset.whisperAck);
+      return;
+    }
+    if (event.target.closest('[data-whisper-send]')) sendWhisper();
+  });
+
+  whisperSection.addEventListener('input', (event) => {
+    if (event.target.id === 'whisperInput') state.whisperDraft = event.target.value;
+  });
+
+  whisperSection.addEventListener('keydown', (event) => {
+    if (event.target.id === 'whisperInput' && event.key === 'Enter' && (event.ctrlKey || event.metaKey)) {
+      event.preventDefault();
+      sendWhisper();
     }
   });
 
@@ -7322,11 +7701,12 @@ body::after {
     state.cart = [];
     state.orderNote = '';
     state.cartDate = bootDay;
-    safeWrite(STORE_KEYS.cart, []);
-    safeWrite(STORE_KEYS.cartDate, bootDay);
-    safeWrite(STORE_KEYS.orderNote, '');
+    safeWrite(CART_KEYS.cart, []);
+    safeWrite(CART_KEYS.cartDate, bootDay);
+    safeWrite(CART_KEYS.orderNote, '');
   }
   syncCartUI();
+  renderWhisperPanel();
   route();
   connectSharedCart();
   window.setInterval(ensureCartDay, 30 * 1000);
